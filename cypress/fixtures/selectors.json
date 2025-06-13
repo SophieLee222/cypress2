@@ -1,0 +1,27 @@
+{
+  "mainPage": {
+    "logoText": "Идёмвкино",
+    "navLinks": "nav.page-nav > a"
+  },
+  "adminPage": {
+    "url": "/admin/index.php",
+    "adminTitle": "Администраторррская",
+    "loginError": "Ошибка авторизации!",
+    "hallTitleSelector": ".conf-step__list > :nth-child(4)"
+  },
+  "clientPage": {
+    "url": "/",
+    "navLinks": "nav.page-nav > a",
+    "sessionNavLinkIndex": 1,
+    "hallTitle": ":nth-child(5) > .movie-seances__hall > .movie-seances__hall-title",
+    "hallTitleByText": ".movie-seances__hall-title",
+    "hallContainer": ".movie-seances__hall",
+    "sessionTime": ".movie-seances__time",
+    "selectSeat": ".buying-scheme__wrapper > :nth-child(1) > :nth-child(1)",
+    "acceptButton": ".acceptin-button"
+},
+  "urls": {
+    "hallPage": "/client/hall.php",
+    "paymentPage": "/client/payment.php"
+  }
+}
