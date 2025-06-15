@@ -16,13 +16,43 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get('.login__button').click();
  })
 
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+ Cypress.Commands.add('createPet', (pet) => {
+  cy.request({
+    url: 'https://petstore.swagger.io/v2/pet',
+    method: 'POST',
+    body: pet,
+  }).its('status').should('eq', 200);
+});
+
+Cypress.Commands.add('getPet', (pet) => {
+  cy.request(`https://petstore.swagger.io/v2/pet/${pet.id}`)
+      .should((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.body.id).to.eq(pet.id);
+        expect(response.body.name).to.eq(pet.name);
+      });
+});
+
+Cypress.Commands.add('updatePet', (pet) => {
+  cy.request({
+      url: 'https://petstore.swagger.io/v2/pet',
+      method: 'PUT',
+      body: pet,
+    })
+      .its('status')
+      .should('eq', 200);
+
+    pet.name = newPetName; 
+});
+
+Cypress.Commands.add('deletePet', (id) => {
+  cy.request({
+      url: `https://petstore.swagger.io/v2/pet/${id}`,
+      method: 'DELETE'
+    })
+      .its('status')
+      .should('eq', 200);
+  });
+
+

@@ -1,0 +1,29 @@
+{
+  "pet1": {
+    "id": 11111,
+    "category": {
+      "id": 1,
+      "name": "first-category"
+    },
+    "name": "Kitten",
+    "status": "available"
+  },
+  "pet2": {
+    "id": 22222,
+    "category": {
+      "id": 1,
+      "name": "first-category"
+    },
+    "name": "Kitty",
+    "status": "available"
+  },
+  "pet3": {
+    "id": 33333,
+    "category": {
+      "id": 1,
+      "name": "first-category"
+    },
+    "name": "Dog",
+    "status": "available"
+  }
+}
